@@ -1,0 +1,19 @@
+criar um bucket dentro do s3 (gabriel é o usuario do local stack, dentro do arquivo config)
+
+aws --endpoint http://localhost:4566 --profile gabriel s3 mb s3://gabriels3
+
+listar o que tem dentro do bucket (altera somente o ls,estava como mb de criação)
+
+aws --endpoint http://localhost:4566 --profile gabriel s3 ls s3://gabriels3
+
+adicionar um objeto dentro do bucket (arquivo que eu deixei na raiz do projeto que eu abrir o git bash)
+comando cp o arquivo de origin e o bucket de destino
+
+aws --endpoint http://localhost:4566 --profile gabriel s3 cp comandos-localstack.txt s3://gabriels3
+
+fazer um dowload para uma pasta que eu criei na raiz, depois do localstack.txt existe um "." que informa o diretório
+correte.
+
+cd aws-dowload-s3/
+aws --endpoint http://localhost:4566 --profile gabriel s3 cp s3://gabriels3/comandos-localstack.txt .
+
